@@ -13,14 +13,13 @@ const lookup = {
 function rot13(encodedStr){
    let decodedArr = []; // Your Result goes here
   // Only change code below this line
-	var index=0;
-	for(let i in encodedStr ){
-		for(let j in lookup){
-			if (i==j) {
-				decodedArr[index]=lookup[j];
-			}
-		}
-	}
+	 for (const key in encodedStr) {
+    
+    if(encodedStr[key] in lookup){
+        decodedArr.push(lookup[encodedStr[key]])
+        
+    }
+  }
 
   return decodedArr ;//return decodedArr
 }
